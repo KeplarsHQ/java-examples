@@ -6,7 +6,45 @@ Spring Boot demo project showing how to integrate the [Keplars](https://keplars.
 
 - Java 17+
 - Maven 3.8+
-- A Keplars API key ([get one here](https://app.keplars.com))
+- A Keplars API key ([get one here](https://dash.keplars.com))
+
+## SDK Dependency
+
+Add to your `pom.xml`:
+
+```xml
+<dependency>
+    <groupId>com.keplars</groupId>
+    <artifactId>keplars-kotlin</artifactId>
+    <version>1.10.5</version>
+</dependency>
+```
+
+Or `build.gradle`:
+
+```groovy
+implementation 'com.keplars:keplars-kotlin:1.10.5'
+```
+
+Then import and initialise:
+
+```java
+import com.keplars.KeplarsClient;
+import com.keplars.models.SendEmailRequest;
+import com.keplars.models.SendEmailResponse;
+
+KeplarsClient client = KeplarsClient.create("kms_your_api_key");
+
+SendEmailResponse response = client.getEmails().sendInstantAsync(
+    new SendEmailRequest(
+        "user@example.com",      // to
+        "hello@yourdomain.com",  // from
+        "Hello!",                // subject
+        "<h1>Hello World</h1>",  // html
+        null, null, null, null, null, null, null
+    )
+).get();
+```
 
 ## Setup
 
