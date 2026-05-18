@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: keplars-java-examples
+
+keplars:
+  api-key: ${KEPLARS_API_KEY}
+  base-url: ${KEPLARS_BASE_URL:https://api.keplars.com}
+
+server:
+  port: 8080
