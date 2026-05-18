@@ -147,6 +147,10 @@ This project uses the official Keplars Kotlin SDK which works seamlessly from Ja
 
 All async operations return `CompletableFuture<T>`, integrating naturally with Spring's async support.
 
+## Related Examples
+
+- [Kotlin Examples](https://github.com/KeplarsHQ/kotlin-examples) — Ktor + coroutines, idiomatic `suspend` API
+
 ## License
 
 MIT
